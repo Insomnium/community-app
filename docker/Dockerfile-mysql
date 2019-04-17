@@ -1,0 +1,7 @@
+FROM mysql:8.0.15
+MAINTAINER Igor Petrov <Ins137@gmail.com>
+
+ENV MYSQL_ROOT_PASSWORD password
+ENV MYSQL_DATABASE community-app
+
+CMD [ "--default-authentication-plugin=mysql_native_password" ]

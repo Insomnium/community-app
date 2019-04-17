@@ -1,0 +1,13 @@
+FROM node:8
+MAINTAINER Igor Petrov <Ins137@gmail.com>
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install 
+
+COPY acceptance_tests admin frontend server *.js ./
+EXPOSE 8080
+
+CMD [ "npm", "run", "start" ]
